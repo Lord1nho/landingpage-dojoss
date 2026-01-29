@@ -1,6 +1,6 @@
 export function Footer() {
     return (
-        <footer className="bg-[#E02525]">
+        <footer className="bg-[#B22222]">
             <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 py-6 text-white md:flex-row md:px-6">
 
                 {/* LOGO */}
@@ -13,7 +13,7 @@ export function Footer() {
 
                 {/* COPYRIGHT */}
                 <p className="text-sm text-white/90">
-                    © 2025 DojOSS!. Todos os direitos reservados.
+                    © 2026 DojOSS!. Todos os direitos reservados.
                 </p>
 
                 {/* ÍCONES */}

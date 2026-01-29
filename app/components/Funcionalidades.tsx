@@ -43,7 +43,6 @@ export default function Funcionalidades() {
                                 "Controle financeiro com alertas de inadimplência",
                                 "Planos de aula personalizados por modalidade",
                                 "Múltiplos perfis de acesso (gestor, professor, aluno)",
-                                "Relatórios visuais para tomada de decisões",
                                 "Interface intuitiva sem necessidade de treinamento",
                             ].map((item, i) => (
                                 <li key={i} className="flex items-start gap-3 text-sm text-gray-700 md:text-base">

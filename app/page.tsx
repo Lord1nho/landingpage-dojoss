@@ -9,6 +9,7 @@ import {Footer} from "@/app/components/Footer";
 
 const navItems = [
     { label: "CTA", href: "#cta" },
+    { label: "Objetivo", href: "#objetivo" }
 ];
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       <>
         <Header></Header>
           <section
+              id="inicio"
               className="bg-[#B22222] text-white"
           >
               <div className="mx-auto flex min-h-[70vh] max-w-7xl flex-col items-center justify-center px-6 text-center">
@@ -40,9 +42,11 @@ export default function Home() {
                           Começar Agora →
                       </a>
 
-                      <button className="rounded-lg border border-white/70 px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-[#B22222]">
+                      <a
+                          href={navItems[1].href}
+                          className="rounded-lg border border-white/70 px-6 py-3 font-semibold text-white transition hover:bg-white hover:text-[#B22222]">
                           Conheça-nos
-                      </button>
+                      </a>
                   </div>
 
               </div>

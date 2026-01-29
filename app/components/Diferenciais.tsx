@@ -22,7 +22,7 @@ export default function Diferencial() {
                             Tudo em uma única plataforma
                         </h3>
                         <p className="text-sm text-gray-600">
-                            Acesse e gerencie turmas, alunos e finanças com praticidade em um só lugar.
+                            Acesse e gerencie turmas, alunos e planos de aula com praticidade em um só lugar.
                         </p>
                     </div>
 
@@ -32,10 +32,10 @@ export default function Diferencial() {
                             📈
                         </div>
                         <h3 className="mb-2 font-semibold text-black">
-                            Acompanhamento detalhado
+                            Gestão Financeira
                         </h3>
                         <p className="text-sm text-gray-600">
-                            Visualize o desempenho da academia com relatórios e insights estratégicos.
+                            Controle simples e eficiente de mensalidades, garantindo mais organização e previsibilidade financeira.
                         </p>
                     </div>
 
@@ -45,10 +45,10 @@ export default function Diferencial() {
                             🔒
                         </div>
                         <h3 className="mb-2 font-semibold text-black">
-                            Dados seguros
+                            Perfis de acesso diversos
                         </h3>
                         <p className="text-sm text-gray-600">
-                            Conte com backup automático e segurança de dados para sua tranquilidade.
+                            Atribuição e personalização de perfis de acesso.
                         </p>
                     </div>
 
@@ -61,7 +61,7 @@ export default function Diferencial() {
                             Acesse de qualquer lugar
                         </h3>
                         <p className="text-sm text-gray-600">
-                            Sistema 100% responsivo para uso em desktop, tablet ou smartphone.
+                            Sistema responsivo para uso em desktop, tablet ou smartphone.
                         </p>
                     </div>
 

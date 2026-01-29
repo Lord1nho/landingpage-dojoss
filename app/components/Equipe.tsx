@@ -7,43 +7,43 @@ const membros = [
         nome: "Jean Silva",
         cargo: "Desenvolvedor Backend",
         iniciais: "JS",
-        bio: "Trabalha alinhando negócio, usuário e tecnologia.",
+        bio: "Desenvolvedor Backend. Estudante de Sistemas de Informação",
     },
     {
         nome: "Isabela de Gondra",
         cargo: "Desenvolvedora Frontend",
         iniciais: "IG",
-        bio: "Desenvolvedora Frontend com expertise em banco de dados. Graduanda em Ciência da Computação.",
+        bio: "Desenvolvedora Frontend. Estudante em de Sistemas de Informação.",
     },
     {
         nome: "Guilherme Oliveira",
         cargo: "Desenvolvedor Frontend",
         iniciais: "PS",
-        bio: "Designer UX/UI com foco em experiência do usuário. Curte apreciar bons livros nas horas vagas.",
+        bio: "Desenvolvedor Frontend. Estudante de Engenharia da Computação",
     },
     {
         nome: "Gabriel Marques",
         cargo: "Desenvolvedor Frontend",
         iniciais: "GM",
-        bio: "Foco em APIs, performance e arquitetura de sistemas.",
+        bio: "Desenvolvedor Frontend. Estudante de Sistemas de Informação",
     },
     {
         nome: "Roniclay Rodrigues",
         cargo: "Desenvolvedor Backend",
         iniciais: "MA",
-        bio: "Apaixonada por interfaces modernas e acessibilidade.",
+        bio: "Desenvolvedor Backend, Estudante de Engenharia da Computação",
     },
     {
         nome: "Luiz da Silva",
-        cargo: "Fullstack Developer",
+        cargo: "Frontend Developer",
         iniciais: "LS",
-        bio: "Desenvolvedor Frontend. Graduando em Sistemas de Informação. Apaixonado por artes marciais e tecnologia.",
+        bio: "Desenvolvedor Frontend. Estudante de Sistemas de Informação. Apaixonado por artes marciais e tecnologia.",
     },
     {
         nome: "Adriel Santana",
         cargo: "Desenvolvedor Backend",
         iniciais: "AS",
-        bio: "Trabalha alinhando negócio, usuário e tecnologia.",
+        bio: "Desenvolvedor Backend. Estudante de Sistemas de Informação",
     },
 ];
 
@@ -64,7 +64,7 @@ export default function Equipe() {
 
     return (
         <section
-            id="equipe"
+            id="Equipe"
             className="scroll-mt-24 bg-[#B22222] py-24 text-white"
         >
             <div className="mx-auto max-w-7xl px-4 md:px-6">
