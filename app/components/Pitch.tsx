@@ -8,19 +8,22 @@ export default function Pitch() {
                     Confira o nosso <span className="font-extrabold">Pitch</span>
                 </h2>
 
-                {/* PLAYER / MOCK DE VÍDEO */}
-                <div className="mx-auto mt-12 flex w-full max-w-3xl flex-col items-center justify-center rounded-2xl bg-[#C62828] px-6 py-20 shadow-lg">
-
-                    {/* BOTÃO PLAY */}
-                    <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-white">
-                        <span className="ml-1 text-2xl text-[#B22222]">▶</span>
-                    </div>
-
-                    {/* LEGENDA */}
-                    <p className="text-sm md:text-base text-white/90">
-                        Sistema de Gestão Integrada de Academias
-                    </p>
+                {/* VIDEO */}
+                <div className="mx-auto mt-12 w-full max-w-3xl overflow-hidden rounded-2xl shadow-lg aspect-video">
+                    <iframe
+                        className="h-full w-full"
+                        src="https://www.youtube.com/embed/uD5Fl8_HWW4"
+                        title="Pitch DojOOS"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    />
                 </div>
+
+                {/* LEGENDA */}
+                <p className="mt-4 text-sm md:text-base text-white/90">
+                    Sistema de Gestão Integrada de Academias
+                </p>
 
             </div>
         </section>
