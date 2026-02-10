@@ -9,7 +9,6 @@ const navItems = [
     { label: "Pitch", href: "#Pitch" },
     { label: "Equipe", href: "#Equipe" },
     { label: "Contato", href: "#cta" },
-    { label: "inicio", href: "#inicio" }
 ];
 
 export default function Header() {
@@ -18,10 +17,11 @@ export default function Header() {
     return (
         <header className="sticky top-0 z-50 bg-[#B22222]">
             <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
-                {/* LOGO */}
-                <a href={navItems[6].href} className="text-lg font-bold text-white">
-          DojOSS!
-        </a>
+
+                {/* LOGO → VOLTA PRO INÍCIO */}
+                <a href="#inicio" className="text-lg font-bold text-white">
+                    DojOSS!
+                </a>
 
                 {/* NAV DESKTOP */}
                 <nav className="hidden md:flex items-center gap-8">
@@ -35,7 +35,6 @@ export default function Header() {
                         </a>
                     ))}
                 </nav>
-
 
                 {/* BOTÃO MOBILE */}
                 <button
@@ -61,7 +60,6 @@ export default function Header() {
                                 {item.label}
                             </a>
                         ))}
-
                     </nav>
                 </div>
             )}

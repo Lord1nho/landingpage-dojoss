@@ -1,9 +1,46 @@
 "use client";
 
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export function CTA() {
     const [open, setOpen] = useState(false);
+    const [loading, setLoading] = useState(false);
+
+    const [form, setForm] = useState({
+        name: "",
+        email: "",
+        message: "Quero assinar o Dojoss!",
+    });
+
+    function handleChange(
+        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) {
+        setForm({ ...form, [e.target.name]: e.target.value });
+    }
+
+    async function handleSubmit(e: React.FormEvent) {
+        e.preventDefault();
+        setLoading(true);
+
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
+            });
+
+            if (!res.ok) throw new Error();
+
+            toast.success("Mensagem enviada com sucesso! Um dos nossos consultores entrará em contato");
+            setForm({ name: "", email: "", message: "Quero assinar o Dojoss!" });
+            setOpen(false);
+        } catch {
+            toast.error("Erro ao enviar mensagem 😢");
+        } finally {
+            setLoading(false);
+        }
+    }
 
     return (
         <>
@@ -18,66 +55,60 @@ export function CTA() {
                     </p>
 
                     <div className="mt-8 flex justify-center">
-                        <a
+                        <button
                             onClick={() => setOpen(true)}
-                            className="inline-block rounded-lg bg-[#F5F5F5] px-6 py-3 font-semibold text-black transition hover:bg-white cursor-pointer"
+                            className="inline-block rounded-lg bg-[#F5F5F5] px-6 py-3 font-semibold text-black transition hover:bg-white"
                         >
                             Entrar em Contato →
-                        </a>
+                        </button>
                     </div>
                 </div>
             </section>
 
-            {/* MODAL */}
             {open && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
-                    <div className="w-full max-w-lg rounded-xl bg-[#B22222] p-8 relative">
+                    <div className="relative w-full max-w-lg rounded-xl bg-[#B22222] p-8">
                         <button
                             onClick={() => setOpen(false)}
-                            className="absolute right-4 top-4 text-white text-xl hover:opacity-70"
+                            className="absolute right-4 top-4 text-white text-xl"
                         >
                             ✕
                         </button>
 
-                        <form className="flex flex-col gap-6 text-left">
-                            <div>
-                                <label className="text-white font-medium">
-                                    Nome Completo <span className="text-red-400">*</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    required
-                                    className="mt-2 w-full rounded-md border border-white/20 bg-transparent px-4 py-3 text-white outline-none focus:border-white"
-                                />
-                            </div>
+                        <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                            <input
+                                name="name"
+                                placeholder="Nome completo"
+                                required
+                                value={form.name}
+                                onChange={handleChange}
+                                className="rounded-md bg-transparent border border-white/30 px-4 py-3 text-white"
+                            />
 
-                            <div>
-                                <label className="text-white font-medium">
-                                    Email Pessoal <span className="text-red-400">*</span>
-                                </label>
-                                <input
-                                    type="email"
-                                    required
-                                    className="mt-2 w-full rounded-md border border-white/20 bg-transparent px-4 py-3 text-white outline-none focus:border-white"
-                                />
-                            </div>
+                            <input
+                                name="email"
+                                type="email"
+                                placeholder="Email"
+                                required
+                                value={form.email}
+                                onChange={handleChange}
+                                className="rounded-md bg-transparent border border-white/30 px-4 py-3 text-white"
+                            />
 
-                            <div>
-                                <label className="text-white font-medium">
-                                    Algo a mais? <span className="text-red-400">*</span>
-                                </label>
-                                <textarea
-                                    required
-                                    rows={4}
-                                    className="mt-2 w-full resize-none rounded-md border border-white/20 bg-transparent px-4 py-3 text-white outline-none focus:border-white"
-                                />
-                            </div>
+                            <textarea
+                                name="message"
+                                rows={4}
+                                required
+                                value={form.message}
+                                onChange={handleChange}
+                                className="rounded-md bg-transparent border border-white/30 px-4 py-3 text-white"
+                            />
 
                             <button
-                                type="submit"
-                                className="mt-4 w-fit rounded-md bg-white px-6 py-3 font-semibold bg-[#B22222] hover:bg-gray-100 transition"
+                                disabled={loading}
+                                className="rounded-md bg-white px-6 py-3 font-semibold text-black disabled:opacity-60"
                             >
-                                Enviar
+                                {loading ? "Enviando..." : "Enviar"}
                             </button>
                         </form>
                     </div>

@@ -1,10 +1,9 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const inter = Inter({
-    subsets: ["latin"],
-    weight: ["400", "600", "700", "800"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
                                        children,
@@ -13,7 +12,18 @@ export default function RootLayout({
 }) {
     return (
         <html lang="pt-BR">
-        <body className={inter.className}>{children}</body>
+        <body className={inter.className}>
+        {children}
+
+        <ToastContainer
+            position="top-right"
+            autoClose={3000}
+            pauseOnHover
+            closeOnClick
+            draggable
+            theme="light"
+        />
+        </body>
         </html>
     );
 }
